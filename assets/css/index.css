@@ -1,0 +1,62 @@
+/*
+
+This is a development CSS file that is compiled to a minified
+production stylesheet in assets/built/screen.css using: npm run dev
+
+*/
+
+@import "./vars.css";
+@import "components/global.css";
+
+/* Tailwind imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lib - Local component imports
+/* ---------------------------------------------------------- */
+
+/* @import "components/global.css";
+@import "components/forms.css";
+@import "components/buttons.css"; */
+
+/* Ghost components */
+/* @import "ghost/header.css";
+@import "ghost/content.css";
+@import "ghost/readmore.css";
+@import "ghost/members.css";
+@import "ghost/errors.css";
+@import "ghost/footer.css";
+@import "ghost/badge.css";
+@import "ghost/pagination.css";
+@import "ghost/comments.css"; */
+
+
+html {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    background: #ffffff;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav li {
+    display: inline-block;
+    @apply px-4;
+    @apply text-2xl;
+}
+
+.nav-current {
+    color: var(--color-primary);
+}
+
+nav { 
+    color: var(--color-font);
+}
+
+.post {
+    color: var(--color-font)
+}

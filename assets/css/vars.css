@@ -1,0 +1,44 @@
+/* Variables
+/* ---------------------------------------------------------- */
+
+:root {
+
+    /* Colors */
+    --color-primary: #42B983;
+    --color-secondary: #2D2D2A;
+    --color-tertiary: #E5DCC5;
+    --color-font: #ECE2D0;
+    --color-heading: #848FA5;
+    --color-success: #80B912;
+    --color-error: #F05230;
+
+    [data-theme="dark"] {
+        --color-secondary: #2D2D2A;
+        --color-tertiary: #E5DCC5;
+        --color-font: #656e80;
+        --color-heading: #848FA5;
+    }
+    
+
+    /* Fonts */
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, serif;
+    --font-mono: Menlo, Courier, monospace;
+    --font-light: 100;
+    --font-normal: 400;
+    --font-bold: 700;
+    --font-heavy: 800;
+
+    /* Breakpoints */
+    --xlarge: 1680px;
+    --large: 1280px;
+    --medium: 980px;
+    --small: 740px;
+    --xsmall: 480px;
+
+    /* Sizes */
+    --height: 4rem;
+    --margin: 2rem;
+    --radius: 0.5rem;
+
+}
