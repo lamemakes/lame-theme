@@ -657,11 +657,6 @@ video {
   height: 1.5rem;
 }
 
-.size-5 {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
 .h-40 {
   height: 10rem;
 }
@@ -772,11 +767,6 @@ video {
 
 .text-heading-color {
   color: var(--color-heading);
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 html {
