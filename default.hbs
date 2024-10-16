@@ -20,10 +20,10 @@
 |_| \__,_||_| |_| |_| \___||_| |_| |_| \__,_||_|\_\ \___||___/
 -------------------------------------------------------------->
 
-<body class="bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed font-sans">
-    <header class="sticky flex top-0 bg-secondary-color min-h-16 z-10">
-        <nav class="grid grid-cols-6 w-full max-w-6xl my-auto mx-auto text-3xl font-bold">
-            <div id="logo" class="col-span-4 px-5 justify-self-left">
+<body class="h-screen bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed font-sans">
+    <header class="sticky top-0 flex justify-center min-h-16 bg-secondary-color text-heading-color z-10">
+        <nav class="wrapper justify-between text-3xl font-bold">
+            <div id="logo" class="my-auto">
                 <a class="" href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}" />
@@ -37,11 +37,9 @@
                     </div>
                 </a>
             </div>
-            <div class="col-span-2 container flex">
-                <div class="flex">
-                    {{navigation}}
-                </div>
-                <div class="px-4">
+            <div class="flex">
+                {{navigation}}
+                <div class="pl-4 my-auto">
                     <div class="flex">
                         {{search}}
                     </div>
@@ -49,23 +47,16 @@
             </div>
         </nav>
     </header>
-    <main id="content" class="max-w-4xl mx-auto">
-
-        {{{body}}}
-        {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-
+    <main id="content" class="flex justify-center">
+        <div class="wrapper">
+            {{{body}}}
+        </div>
     </main>
-    <footer class="">
-        <div class="max-w-5xl mx-auto text-center">
-            <div class="">
-                {{navigation type="secondary"}}
-            </div>
-            <div class="">
-                Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-            </div>
+    <footer class="flex justify-center">
+        <div class="text-center text-sm">
+            {{navigation type="secondary"}}
         </div>
     </footer>
     {{ghost_foot}}
-    {{!-- Outputs important scripts - should always be included before closing body tag --}}
 </body>
 </html>

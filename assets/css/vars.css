@@ -4,19 +4,21 @@
 :root {
 
     /* Colors */
-    --color-primary: #42B983;
-    --color-secondary: #2D2D2A;
-    --color-tertiary: #E5DCC5;
-    --color-font: #ECE2D0;
-    --color-heading: #848FA5;
-    --color-success: #80B912;
-    --color-error: #F05230;
+    --color-primary: rgb(66, 185, 131);
+    --color-secondary: rgb(45, 45, 42);
+    --color-tertiary: rgb(229, 220, 197);
+    --color-heading: rgb(236, 226, 208);
+    --color-font: rgb(184, 194, 216);
+    --color-success: rgb(128, 185, 18);
+    --color-error: rgb(240, 82, 48);
+
+    --color-secondary-op: rgba(112, 112, 108, 0.9);
 
     [data-theme="dark"] {
-        --color-secondary: #2D2D2A;
-        --color-tertiary: #E5DCC5;
-        --color-font: #656e80;
-        --color-heading: #848FA5;
+        --color-secondary: rgb(45, 45, 42);
+        --color-tertiary: rgb(229, 220, 197);
+        --color-font: rgb(101, 110, 128);
+        --color-heading: rgb(132, 143, 165);
     }
     
 

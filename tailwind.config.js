@@ -8,11 +8,15 @@ export default {
           "secondary-color": "var(--color-secondary)",
           "tertiary-color": "var(--color-tertiary)",
           "font-color": "var(--color-font)",
-          "heading-color": "var(--color-heading)"
+          "heading-color": "var(--color-heading)",
+          "secondary-color-op": "var(--color-secondary-op)"
         },
         backgroundImage: {
           'desktop-clutter': "url('../images/desktop_background.webp')",
           'mobile-clutter': "url('../images/mobile_background.webp')"
+        },
+        borderRadius: {
+          'xl': '0.75rem'
         }
       }
   },
