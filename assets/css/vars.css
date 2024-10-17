@@ -5,10 +5,11 @@
 
     /* Colors */
     --color-primary: rgb(66, 185, 131);
-    --color-secondary: rgb(45, 45, 42);
+    --color-secondary: rgb(61, 61, 57);
     --color-tertiary: rgb(229, 220, 197);
     --color-heading: rgb(236, 226, 208);
     --color-font: rgb(184, 194, 216);
+    --color-font-dark: rgb(81, 88, 102);
     --color-success: rgb(128, 185, 18);
     --color-error: rgb(240, 82, 48);
 

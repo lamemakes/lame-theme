@@ -2,60 +2,67 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="my-4 p-6 rounded-xl bg-secondary-color hover:bg-secondary-color-op {{post_class}}">
+<article class="my-4 p-6 rounded-xl bg-secondary-color hover:bg-secondary-color-op">
     <a class="flex flex-row" href="{{url}}">
-        <div class="w-40 h-40 shrink-0 mr-6">
-          <picture>
-            <source 
-              srcset="
-              {{img_url feature_image size="xxs" format="avif"}} 30w,
-              {{img_url feature_image size="xs" format="avif"}} 100w,
-              {{img_url feature_image size="s" format="avif"}} 300w,
-              {{img_url feature_image size="m" format="avif"}} 600w,
-              {{img_url feature_image size="l" format="avif"}} 1200w,
-              {{img_url feature_image size="xl" format="avif"}} 2000w"
-              {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-              type="image/avif"
-              {{^if @first}}loading="lazy"{{/if}}
-            >
-            <source 
-              srcset="
-              {{img_url feature_image size="xxs" format="webp"}} 30w,
-              {{img_url feature_image size="xs" format="webp"}} 100w,
-              {{img_url feature_image size="s" format="webp"}} 300w,
-              {{img_url feature_image size="m" format="webp"}} 600w,
-              {{img_url feature_image size="l" format="webp"}} 1200w,
-              {{img_url feature_image size="xl" format="webp"}} 2000w"
-              {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-              type="image/webp"
-              {{^if @first}}loading="lazy"{{/if}}
+      <div class="w-40 h-40 shrink-0 mr-6">
+        <picture>
+          <source 
+            srcset="
+            {{img_url feature_image size="xxs" format="avif"}} 30w,
+            {{img_url feature_image size="xs" format="avif"}} 100w,
+            {{img_url feature_image size="s" format="avif"}} 300w,
+            {{img_url feature_image size="m" format="avif"}} 600w,
+            {{img_url feature_image size="l" format="avif"}} 1200w,
+            {{img_url feature_image size="xl" format="avif"}} 2000w"
+            {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+            type="image/avif"
+            {{^if @first}}loading="lazy"{{/if}}
+          >
+          <source 
+            srcset="
+            {{img_url feature_image size="xxs" format="webp"}} 30w,
+            {{img_url feature_image size="xs" format="webp"}} 100w,
+            {{img_url feature_image size="s" format="webp"}} 300w,
+            {{img_url feature_image size="m" format="webp"}} 600w,
+            {{img_url feature_image size="l" format="webp"}} 1200w,
+            {{img_url feature_image size="xl" format="webp"}} 2000w"
+            {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+            type="image/webp"
+            {{^if @first}}loading="lazy"{{/if}}
 
-            >
-            <img
-              srcset="
-              {{img_url feature_image size="xxs"}} 30w,
-              {{img_url feature_image size="xs"}} 100w,
-              {{img_url feature_image size="s"}} 300w,
-              {{img_url feature_image size="m"}} 600w,
-              {{img_url feature_image size="l"}} 1200w,
-              {{img_url feature_image size="xl"}} 2000w"
-              {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
-              src="{{img_url feature_image size="m"}}"
-              alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-              class="object-cover object-center h-full w-full rounded-xl"
-              {{^if @first}}loading="lazy"{{/if}}
-            >
-          </picture>
-        </div>
-        <div>
-          <div class="flex justify-between">
-            <h2 class="text-3xl font-semibold">{{title}}</h2>
-            <div class="flex">
-              {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
-            </div>
+          >
+          <img
+            srcset="
+            {{img_url feature_image size="xxs"}} 30w,
+            {{img_url feature_image size="xs"}} 100w,
+            {{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w,
+            {{img_url feature_image size="l"}} 1200w,
+            {{img_url feature_image size="xl"}} 2000w"
+            {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
+            src="{{img_url feature_image size="m"}}"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            class="object-cover object-center h-full w-full rounded-xl"
+            {{^if @first}}loading="lazy"{{/if}}
+          >
+        </picture>
+      </div>
+      <div class="w-full">
+        <div class="flex justify-between">
+          <h2 class="text-3xl font-semibold">{{title}}</h2>
+          <div class="flex">
+            {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
           </div>
-          <span class="text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></span>
-          <p class="text-heading-color">{{excerpt}}...</p>
         </div>
+        <span class="text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></span>
+        <p class="text-heading-color">{{excerpt}}...</p>
+        <div class="text-sm font-semibold mt-2">
+          {{#if tags}}
+            {{#foreach tags}}
+              <button class="px-2.5 py-0.5 mx-0.5 tag tag-{{slug}}">{{name}}</button>
+            {{/foreach}}
+          {{/if}}
+        </div>
+      </div>
     </a>
 </article>

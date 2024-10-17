@@ -11,10 +11,11 @@ production stylesheet in assets/built/screen.css using: npm run dev
 :root {
   /* Colors */
   --color-primary: rgb(66, 185, 131);
-  --color-secondary: rgb(45, 45, 42);
+  --color-secondary: rgb(61, 61, 57);
   --color-tertiary: rgb(229, 220, 197);
   --color-heading: rgb(236, 226, 208);
   --color-font: rgb(184, 194, 216);
+  --color-font-dark: rgb(81, 88, 102);
   --color-success: rgb(128, 185, 18);
   --color-error: rgb(240, 82, 48);
   --color-secondary-op: rgba(112, 112, 108, 0.9);
@@ -630,6 +631,11 @@ video {
   z-index: 10;
 }
 
+.mx-0\.5 {
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -642,6 +648,10 @@ video {
 
 .mr-6 {
   margin-right: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .inline {
@@ -697,6 +707,14 @@ video {
   justify-content: space-between;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -729,6 +747,16 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .pl-4 {
@@ -769,6 +797,8 @@ video {
   color: var(--color-heading);
 }
 
+/* Global/general */
+
 html {
   display: flex;
   flex-direction: column;
@@ -780,8 +810,10 @@ html {
 .wrapper {
   display: flex;
   width: 100%;
-  max-width: 72rem;
+  max-width: 64rem;
 }
+
+/* Nav */
 
 .nav {
   display: flex;
@@ -805,9 +837,51 @@ h2 {
   color: var(--color-heading);
 }
 
+/* Footer */
+
 footer a {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
+}
+
+/* Tags */
+
+.tag {
+  background-color: #66c9ff;
+  color: var(--color-font-dark);
+  border-radius: 9999px;
+}
+
+.tag-completed {
+  background-color: #6feb96;
+}
+
+.tag-ongoing {
+  background-color: #ffb566;
+}
+
+.tag-researching {
+  background-color: #857cff;
+}
+
+.tag-scrapped {
+  background-color: #ff4d4d;
+}
+
+.tag-hardware {
+  background-color: #7188fd;
+}
+
+.tag-software {
+  background-color: #d466ff;
+}
+
+.tag-art {
+  background-color: #ff668c;
+}
+
+.tag-rant {
+  background-color: #c66f92;
 }
 
 .hover\:bg-secondary-color-op:hover {
@@ -819,3 +893,4 @@ footer a {
     background-image: url('../images/desktop_background.webp');
   }
 }
+  

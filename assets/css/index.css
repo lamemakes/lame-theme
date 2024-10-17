@@ -8,10 +8,14 @@ production stylesheet in assets/built/screen.css using: npm run dev
 @import "./vars.css";
 @import "components/global.css";
 
+
 /* Tailwind imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Global/general */
 
 html {
     display: flex;
@@ -24,8 +28,11 @@ html {
 .wrapper {
     display: flex;
     width: 100%;
-    @apply max-w-6xl;
+    @apply max-w-5xl;
 }
+
+
+/* Nav */
 
 .nav {
     display: flex;
@@ -34,8 +41,9 @@ html {
 .nav li {
     display: inline-block;
     height: 100%;
-    @apply p-4;
-    @apply text-2xl;
+    padding: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 .nav li :hover, 
@@ -48,6 +56,51 @@ h2 {
     color: var(--color-heading);
 }
 
+
+/* Footer */
+
 footer a {
-    @apply text-base
+    font-size: 1rem;
+    line-height: 2rem;
 }
+
+
+/* Tags */
+
+.tag {
+    background-color: #66c9ff;
+    color: var(--color-font-dark);
+    border-radius: 9999px;
+}
+
+.tag-completed {
+    background-color: #6feb96;
+}
+
+.tag-ongoing {
+    background-color: #ffb566;
+}
+
+.tag-researching {
+    background-color: #857cff;
+}
+
+.tag-scrapped {
+    background-color: #ff4d4d;
+}
+.tag-hardware {
+    background-color: #7188fd;
+}
+
+.tag-software {
+    background-color: #d466ff;
+}
+
+.tag-art {
+    background-color: #ff668c;
+}
+
+.tag-rant {
+    background-color: #c66f92;
+}
+  
