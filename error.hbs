@@ -1,32 +1,34 @@
 {{!< default}}
 
-<main class="">
+<main class=''>
 
-    <section class="gh-page gh-error">
-        <div class="">
+    <section class='gh-page gh-error'>
+        <div class=''>
 
-            <section class="">
+            <section class=''>
 
-                <h1 class="">{{statusCode}}</h1>
-                <p class="">{{message}}</p>
-                <p class=""><a href="{{@site.url}}">Go to the front page →</a></p>
+                <h1 class=''>{{statusCode}}</h1>
+                <p class=''>{{message}}</p>
+                <p class=''><a href='{{@site.url}}'>Go to the front page →</a></p>
 
                 {{#if errorDetails}}
-                <section class="">
-                    <h4>Theme errors:</h4>
-                    <ul class="">
-                        {{#foreach errorDetails}}
-                        <li>
-                            <h5 class="">{{{rule}}}</h5>
+                    <section class=''>
+                        <h4>Theme errors:</h4>
+                        <ul class=''>
+                            {{#foreach errorDetails}}
+                                <li>
+                                    <h5 class=''>{{{rule}}}</h5>
 
-                            {{#foreach failures}}
-                            <span class=""><strong>Ref:</strong> {{ref}}</span><br>
-                            <span class=""><strong>Message:</strong> {{message}}</span>
+                                    {{#foreach failures}}
+                                        <span class=''><strong>Ref:</strong>
+                                            {{ref}}</span><br />
+                                        <span class=''><strong>Message:</strong>
+                                            {{message}}</span>
+                                    {{/foreach}}
+                                </li>
                             {{/foreach}}
-                        </li>
-                        {{/foreach}}
-                    </ul>
-                </section>
+                        </ul>
+                    </section>
                 {{/if}}
 
             </section>
@@ -35,4 +37,3 @@
     </section>
 
 </main>
-</html>

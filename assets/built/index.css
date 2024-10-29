@@ -10,23 +10,25 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 :root {
   /* Colors */
-  --color-primary: rgb(66, 185, 131);
-  --color-secondary: rgb(61, 61, 57);
-  --color-tertiary: rgb(229, 220, 197);
+  --color-primary: hsl(134, 48%, 50%);
+  --color-secondary: hsl(320, 8%, 22%);
+  --color-tertiary: hsl(320, 48%, 50%);
   --color-heading: rgb(236, 226, 208);
   --color-font: rgb(184, 194, 216);
   --color-font-dark: rgb(81, 88, 102);
   --color-success: rgb(128, 185, 18);
   --color-error: rgb(240, 82, 48);
   --color-secondary-op: rgba(112, 112, 108, 0.9);
-  [data-theme="dark"] {
-    --color-secondary: rgb(45, 45, 42);
+  [data-theme='light'] {
+    --color-secondary: hsl(320, 23%, 74%);
     --color-tertiary: rgb(229, 220, 197);
     --color-font: rgb(101, 110, 128);
     --color-heading: rgb(132, 143, 165);
   }
   /* Fonts */
-  --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
   --font-serif: Georgia, Times, serif;
   --font-mono: Menlo, Courier, monospace;
   --font-light: 100;
@@ -619,21 +621,46 @@ video {
   --tw-contain-style:  ;
 }
 
+.relative {
+  position: relative;
+}
+
 .sticky {
   position: sticky;
+}
+
+.left-\[47\%\] {
+  left: 47%;
 }
 
 .top-0 {
   top: 0px;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .z-10 {
   z-index: 10;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.m-4 {
+  margin: 1rem;
 }
 
 .mx-0\.5 {
   margin-left: 0.125rem;
   margin-right: 0.125rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .my-4 {
@@ -644,6 +671,10 @@ video {
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mr-6 {
@@ -662,6 +693,19 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+.size-5 {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 .size-6 {
   width: 1.5rem;
   height: 1.5rem;
@@ -671,32 +715,77 @@ video {
   height: 10rem;
 }
 
-.h-full {
-  height: 100%;
+.h-\[10vh\] {
+  height: 10vh;
 }
 
-.h-screen {
-  height: 100vh;
+.h-\[90vh\] {
+  height: 90vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .min-h-16 {
   min-height: 4rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-40 {
   width: 10rem;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full {
   width: 100%;
 }
 
+.max-w-6xl {
+  max-width: 72rem;
+}
+
 .shrink-0 {
   flex-shrink: 0;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.scroll-mt-\[10vh\] {
+  scroll-margin-top: 10vh;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .justify-center {
@@ -707,12 +796,18 @@ video {
   justify-content: space-between;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.gap-4 {
+  gap: 1rem;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-xl {
@@ -745,6 +840,14 @@ video {
      object-position: center;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -757,6 +860,10 @@ video {
 .py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pl-4 {
@@ -780,6 +887,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -797,6 +909,22 @@ video {
   color: var(--color-heading);
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 /* Global/general */
 
 html {
@@ -804,19 +932,20 @@ html {
   flex-direction: column;
   max-height: 100vh;
   background: #ffffff;
-  color: var(--color-font)
+  color: var(--color-font);
 }
 
 .wrapper {
   display: flex;
   width: 100%;
-  max-width: 64rem;
+  max-width: 72rem;
 }
 
 /* Nav */
 
 .nav {
   display: flex;
+  color: var(--color-heading);
 }
 
 .nav li {
@@ -827,8 +956,12 @@ html {
   line-height: 2rem;
 }
 
-.nav li :hover, 
-.nav li :active, 
+.show {
+  opacity: 1;
+}
+
+.nav li :hover,
+.nav li :active,
 .nav-current {
   color: var(--color-primary);
 }
@@ -884,6 +1017,10 @@ footer a {
   background-color: #c66f92;
 }
 
+.last\:mb-0:last-child {
+  margin-bottom: 0px;
+}
+
 .hover\:bg-secondary-color-op:hover {
   background-color: var(--color-secondary-op);
 }
@@ -893,4 +1030,3 @@ footer a {
     background-image: url('../images/desktop_background.webp');
   }
 }
-  

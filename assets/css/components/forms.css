@@ -98,7 +98,6 @@
     box-shadow: 0 0 0 1px var(--color-primary);
 }
 
-
 .gh-check + label:before {
     border-radius: var(--radius);
 }

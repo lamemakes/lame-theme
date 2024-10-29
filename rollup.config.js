@@ -1,14 +1,14 @@
-import { defineConfig } from 'rollup';
+import { defineConfig } from 'rollup'
 // A Rollup plugin which locates modules using the Node resolution algorithm
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 // A Rollup plugin to convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from '@rollup/plugin-commonjs'
 // Use the latest JS features in your Rollup bundle
-import babel from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel'
 // Minifies the bundle
-import terser from '@rollup/plugin-terser';
+import terser from '@rollup/plugin-terser'
 
-// commented for tailwind implementation via 
+// commented for tailwind implementation via
 // https://layeredcraft.com/blog/the-complete-guide-for-developing-ghost-themes-with-tailwindcss/
 // CSS
 // Enable the PostCSS preprocessor
@@ -19,23 +19,23 @@ import terser from '@rollup/plugin-terser';
 // import postcssPresetEnv from 'postcss-preset-env';
 
 // Development: Enables a livereload server that watches for changes to CSS, JS, and Handlbars files
-import { resolve } from "path";
-import livereload from 'rollup-plugin-livereload';
+import { resolve } from 'path'
+import livereload from 'rollup-plugin-livereload'
 
 // Rollup configuration
 export default defineConfig({
     input: 'assets/js/index.js',
     output: {
-        dir: "assets/built",
+        dir: 'assets/built',
         sourcemap: true,
         format: 'iife',
-        plugins: [terser()]
+        plugins: [terser()],
     },
     plugins: [
-        commonjs(), 
-        nodeResolve(), 
+        commonjs(),
+        nodeResolve(),
         babel({ babelHelpers: 'bundled' }),
-        // commented for tailwind implementation via 
+        // commented for tailwind implementation via
         // https://layeredcraft.com/blog/the-complete-guide-for-developing-ghost-themes-with-tailwindcss/
         // postcss({
         //     extract: true,
@@ -43,13 +43,14 @@ export default defineConfig({
         //     plugins: [
         //         atImport(),
         //         postcssPresetEnv({})
-        //     ], 
+        //     ],
         //     minimize: true,
         // }),
-        process.env.BUILD !== "production" && livereload({
-            watch: resolve('.'),
-            extraExts: ['hbs'],
-            exclusions: [resolve('node_modules')]
-        }),
-    ]
+        process.env.BUILD !== 'production' &&
+            livereload({
+                watch: resolve('.'),
+                extraExts: ['hbs'],
+                exclusions: [resolve('node_modules')],
+            }),
+    ],
 })
