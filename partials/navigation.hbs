@@ -1,0 +1,33 @@
+{{#if isSecondary}}
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}" role="menuitem">
+                <a href="{{url}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <nav id="nav" class="flex flex-row max-w-6xl w-full justify-between text-3xl font-bold transition duration-300 opacity-0 show z-10">
+        <div id="logo" class="my-auto">
+            <a href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+        </div>
+        <div class="flex my-auto">
+            <ul class="nav">
+                {{#foreach navigation}}
+                    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} nav-item" role="menuitem">
+                        <a href="{{url absolute="true"}}">{{label}}</a>
+                    </li>
+                {{/foreach}}
+            </ul>
+            <div class="nav-item pl-4 my-auto">
+                <button data-ghost-search>{{> "icons/solid-search" classname="size-6"}}</button>
+            </div>
+        </div>
+    </nav>
+{{/if}}

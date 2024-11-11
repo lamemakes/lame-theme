@@ -5,6 +5,12 @@ function initMegaHeader(){
     const regNav = document.getElementById("nav")
     const scrollBtn = document.getElementById("to-content")
 
+    // Check if a page other than index is loaded, if so don't show mega header
+    const currentNav = document.getElementsByClassName('nav-current');
+    if (currentNav.length > 0 || window.location.pathname !== "/") {
+        return;
+    }
+
     // For those who don't want to use JS
     // Only use the big header to add a cool effect, 
     // don't even show it if HTML/CSS only.

@@ -33,7 +33,6 @@ html {
 
 .nav {
     display: flex;
-    color: var(--color-heading);
 }
 
 .nav li {
@@ -48,8 +47,12 @@ html {
     opacity: 1;
 }
 
-.nav li :hover,
-.nav li :active,
+.nav-item {
+    color: var(--color-heading);
+}
+
+.nav-item :hover,
+.nav-item :active,
 .nav-current {
     color: var(--color-primary);
 }

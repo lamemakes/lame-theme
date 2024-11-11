@@ -20,46 +20,31 @@
 |_| \__,_||_| |_| |_| \___||_| |_| |_| \__,_||_|\_\ \___||___/
 -------------------------------------------------------------->
 
-<body class="h-full font-sans bg-secondary-color">
+<body class="font-sans bg-secondary-color">
     <header id="landing-header" class="hidden h-[90vh] flex-col justify-center text-heading-color z-10 bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed text-center">
         <div id="big-nav" class="flex flex-col my-auto">
             <h1 class="text-8xl">{{@site.title}}</h1>
-            <div class="flex flex-row justify-center space-x-4">
-                <p>blog</p>
-                <p>pics</p>
-                <p>about</p>
-            </div>
+            <ul class="flex flex-row justify-center text-xl space-x-4">
+                <li role="menuitem">
+                    <a href="/blog/">blog</a>
+                </li>
+                <li role="menuitem">
+                    <a href="/pics/">pics</a>
+                </li>
+                <li role="menuitem">
+                    <a href="/about/">about</a>
+                </li>
+            </ul>
         </div>
         <button id="to-content" class="flex relative rounded-full bg-secondary-color p-3 mx-auto w-fit animate-bounce transition duration-300 opacity-0" onclick="scrollToContent()">
             <p>what's lame?</p> 
             <p class="my-auto">
-                {{> "icons/arrow-down" classname="pl-1 size-5" }}
+                {{> "icons/solid-arrow-down" classname="pl-1 size-5" }}
             </p>
         </button>
     </header>
     <div class="h-[10vh] min-h-16 sticky top-0 flex justify-center bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed">
-        <nav id="nav" class="flex flex-row max-w-6xl w-full justify-between text-3xl font-bold transition duration-300 opacity-0 show">
-            <div id="logo" class="my-auto">
-                <a class="" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
-                    {{/if}}
-                </a>
-                <a class="" role="button" aria-label="menu">
-                    <div class="">
-                        <div class=""></div>
-                    </div>
-                </a>
-            </div>
-            <div class="flex my-auto">
-                {{navigation}}
-                <div class="pl-4 my-auto">
-                    <button data-ghost-search>{{> "icons/search" classname="size-6"}}</button>
-                </div>
-            </div>
-        </nav>
+        {{navigation}}
     </div>
     <main id="content" class="flex justify-center scroll-mt-[10vh]">
         {{{body}}}
