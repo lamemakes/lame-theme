@@ -1,6 +1,7 @@
 {{!< default}}
 
-<p>pics here</p>
-{{#foreach posts}}
-<p>{{slug}}</p>
-{{/foreach}}
+<div class="max-w-6xl my-4 columns-3">
+    {{#foreach posts}}
+                {{> "preview-pic" }}
+    {{/foreach}}
+</div>
