@@ -1,7 +1,7 @@
 {{#get "pages" slug="about" as |about|}}
     {{#about}}
-        <div class="flex flex-col">
-            <div class="w-2/3 mx-auto">
+        <div class="flex flex-col h-fit bg-zinc-900/70 p-6 rounded-xl">
+            <div class="mx-auto">
                 <picture>
                     <source 
                         srcset="
@@ -39,14 +39,18 @@
                         {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
                         src="{{img_url feature_image size="m"}}"
                         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-                        class="object-cover object-center h-full w-full rounded-full"
+                        class="rounded-xl"
                         loading="lazy"
                     >
                 </picture>
             </div>
-            <div class="bg-secondary-color p-4 rounded-xl m-4">
-                <div class="text-justify"> {{excerpt}} </div>
-            </div>
+            <p id="lame-excerpt" class="pt-4">{{excerpt}} <a class="font-bold" href="/about/">Learn more {{> "icons/solid-arrow-right" classname="size-4 inline stroke-2"}}</a></p>
         </div>
+
+        {{!-- Script to format any mentions of "lamemakes" in the about excerpt with the logo class, hack because can't put HTML in an excerpt --}}
+        <script>
+            let excerptHTML = document.getElementById("lame-excerpt").innerHTML;
+            document.getElementById("lame-excerpt").innerHTML = excerptHTML.replace("lamemakes", "<span class=\"logo\">lamemakes</span>");
+        </script>
     {{/about}}
 {{/get}}

@@ -20,40 +20,20 @@
 |_| \__,_||_| |_| |_| \___||_| |_| |_| \__,_||_|\_\ \___||___/
 -------------------------------------------------------------->
 
-<body class="font-sans bg-secondary-color">
-    <header id="landing-header" class="hidden h-[90vh] flex-col justify-center text-heading-color z-10 bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed text-center">
-        <div id="big-nav" class="flex flex-col my-auto">
-            <h1 class="text-8xl">{{@site.title}}</h1>
-            <ul class="flex flex-row justify-center text-xl space-x-4">
-                <li role="menuitem">
-                    <a href="/blog/">blog</a>
-                </li>
-                <li role="menuitem">
-                    <a href="/pics/">pics</a>
-                </li>
-                <li role="menuitem">
-                    <a href="/about/">about</a>
-                </li>
-            </ul>
-        </div>
-        <button id="to-content" class="flex relative rounded-full bg-secondary-color p-3 mx-auto w-fit animate-bounce transition duration-300 opacity-0" onclick="scrollToContent()">
-            <p>what's lame?</p> 
-            <p class="my-auto">
-                {{> "icons/solid-arrow-down" classname="pl-1 size-5" }}
-            </p>
-        </button>
-    </header>
-    <div class="h-[10vh] min-h-16 sticky top-0 flex justify-center bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed">
+<body class="font-sans bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed">
+    <header class="h-8 min-h-16 sticky top-0 flex justify-center bg-secondary-color z-10">
         {{navigation}}
+    </header>
+    <div class="backdrop-blur-sm">
+        <main id="content" class="flex justify-center">
+            {{{body}}}
+        </main>
+        <footer class="flex justify-center">
+            <div class="text-center text-sm">
+                {{navigation type="secondary"}}
+            </div>
+        </footer>
     </div>
-    <main id="content" class="flex justify-center scroll-mt-[10vh]">
-        {{{body}}}
-    </main>
-    <footer class="flex justify-center">
-        <div class="text-center text-sm">
-            {{navigation type="secondary"}}
-        </div>
-    </footer>
     {{ghost_foot}}
 </body>
 </html>

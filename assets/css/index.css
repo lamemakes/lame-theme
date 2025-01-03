@@ -15,18 +15,34 @@ production stylesheet in assets/built/screen.css using: npm run dev
 
 /* Global/general */
 
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+}
+
 html {
     display: flex;
     flex-direction: column;
     max-height: 100vh;
     background: #ffffff;
     color: var(--color-font);
+    overscroll-behavior-y: none;
+}
+
+.main {
+    overscroll-behavior-y: contain;
 }
 
 .wrapper {
     display: flex;
     width: 100%;
     @apply max-w-6xl;
+}
+
+/* Logo */
+.logo {
+    font-family: 'Rubik';
+    font-weight: 500;
 }
 
 /* Nav */

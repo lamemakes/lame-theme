@@ -2,7 +2,7 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="p-6 rounded-xl bg-secondary-color hover:bg-secondary-color-op mb-4 last:mb-0">
+<article class="p-6 rounded-xl mb-4 last:mb-0 bg-zinc-900/70">
     <a class="flex flex-row" href="{{url}}">
       <div class="w-40 h-40 shrink-0 mr-6">
         <picture>
@@ -50,9 +50,12 @@ Re-usable card for linking to posts
       <div class="w-full">
         <div class="flex justify-between">
           <h2 class="text-3xl font-semibold">{{title}}</h2>
-          <div class="flex" title="~{{reading_time minute="1 minute" minutes="% minute"}} read time">
-            {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
-          </div>
+          {{!-- Ugly way to select all but pics but seems to be the only way? --}}
+          {{#has tag="art, ongoing, completed, hardware, software, researching, scrapped, rant"}}
+            <div class="flex" title="~{{reading_time minute="1 minute" minutes="% minute"}} read time">
+              {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
+            </div>
+          {{/has}}
         </div>
         <span class="text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></span>
         <p class="text-heading-color">{{excerpt}}</p>

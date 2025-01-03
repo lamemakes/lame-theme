@@ -6,7 +6,16 @@
             {{> "preview-blog" }}
         {{/foreach}}
         </div>
-        {{> "about" }}
+        <div class="sticky top-20 h-fit">
+            {{> "about" }}
+            <div class="flex justify-between mx-4 pt-5">
+                <a href="https://github.com/lamemakes">{{> "icons/socials/github" title="Go to the lamemakes GitHub" classname="size-8 inline"}}</a>
+                <a href="https://freak.social/lamemakes">{{> "icons/socials/mastodon" title="Follow on Mastodon" classname="size-8 inline"}}</a>
+                <a href="mailto:wes@lamemakes.com">{{> "icons/solid-envelope" title="Send an e-mail" classname="size-8 inline h-full"}}</a>
+                <a href="https://instagram.com/lamemakes">{{> "icons/socials/instagram" title="Follow on Instagram" classname="size-8 inline"}}</a>
+                <a href="/rss">{{> "icons/solid-rss" title="Subscribe to the RSS feed" classname="size-8 inline"}}</a>
+            </div>
+        </div>
         {{!-- If JS isn't enabled, fallback to standard pagination --}}
         <noscript>
             <div class="">

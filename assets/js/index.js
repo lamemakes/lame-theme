@@ -8,8 +8,7 @@
 // Import JS
 // import menuOpen from './menuOpen'
 // import infiniteScroll from './infiniteScroll'
-import {initMegaHeader, scrollToContent} from './megaHeader'
 
-initMegaHeader();
+import init from "./init";
 
-window.scrollToContent = scrollToContent;
+init();
