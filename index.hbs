@@ -1,19 +1,20 @@
 {{!< default}}
 <div class="max-w-6xl my-4">
-    <div class="grid grid-cols-4 gap-4">
-        <div class="col-span-3 ">
-        {{#foreach posts}}
-            {{> "preview-blog" }}
-        {{/foreach}}
+    <div class="flex flex-col lg:grid lg:grid-cols-4 lg:gap-4">
+        <div class="flex flex-col justify-center lg:col-span-3">
+            {{#foreach posts}}
+                {{> "preview-blog" }}
+            {{/foreach}}
         </div>
-        <div class="sticky top-20 h-fit">
+        <div class="w-4/5 my-1 mx-auto border-y-2 border-zinc-900/70 divide-solid rounded-full lg:hidden"></div>
+        <div class="mx-auto w-full h-fit mt-4 lg:mt-0 lg:sticky lg:top-20">
             {{> "about" }}
-            <div class="flex justify-between mx-4 pt-5">
-                <a href="https://github.com/lamemakes">{{> "icons/socials/github" title="Go to the lamemakes GitHub" classname="size-8 inline"}}</a>
-                <a href="https://freak.social/lamemakes">{{> "icons/socials/mastodon" title="Follow on Mastodon" classname="size-8 inline"}}</a>
-                <a href="mailto:wes@lamemakes.com">{{> "icons/solid-envelope" title="Send an e-mail" classname="size-8 inline h-full"}}</a>
-                <a href="https://instagram.com/lamemakes">{{> "icons/socials/instagram" title="Follow on Instagram" classname="size-8 inline"}}</a>
-                <a href="/rss">{{> "icons/solid-rss" title="Subscribe to the RSS feed" classname="size-8 inline"}}</a>
+            <div class="flex justify-between mx-auto px-8 lg:px-4 pt-5 max-w-96">
+                <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank">{{> "icons/socials/github" title="Go to the lamemakes GitHub" classname="size-8 inline"}}</a>
+                <a href="https://freak.social/lamemakes" rel="noreferrer noopener" target="_blank">{{> "icons/socials/mastodon" title="Follow on Mastodon" classname="size-8 inline"}}</a>
+                <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank">{{> "icons/solid-envelope" title="Send an e-mail" classname="size-8 inline h-full"}}</a>
+                <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank">{{> "icons/socials/instagram" title="Follow on Instagram" classname="size-8 inline"}}</a>
+                <a href="/rss" target="_blank">{{> "icons/solid-rss" title="Subscribe to the RSS feed" classname="size-8 inline"}}</a>
             </div>
         </div>
         {{!-- If JS isn't enabled, fallback to standard pagination --}}
