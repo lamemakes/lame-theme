@@ -20,8 +20,8 @@
 |_| \__,_||_| |_| |_| \___||_| |_| |_| \__,_||_|\_\ \___||___/
 -------------------------------------------------------------->
 
-<body class="font-sans bg-mobile-clutter md:bg-desktop-clutter bg-cover bg-fixed">
-    <header class="min-h-16 sticky top-0 flex justify-center bg-secondary-color z-10">
+<body class="font-sans bg-fixed bg-center bg-cover bg-mobile-clutter md:bg-desktop-clutter">
+    <header class="flex sticky top-0 z-10 justify-center min-h-16 bg-secondary-color">
         {{navigation}}
     </header>
     <div class="backdrop-blur-sm">
@@ -29,7 +29,7 @@
             {{{body}}}
         </main>
         <footer class="flex justify-center">
-            <div class="text-center text-sm">
+            <div class="text-sm text-center">
                 {{navigation type="secondary"}}
             </div>
         </footer>

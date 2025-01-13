@@ -7,8 +7,8 @@
         {{/foreach}}
     </ul>
 {{else}}
-    <nav id="nav" class="flex flex-row mx-8 max-w-6xl w-full justify-between text-3xl font-bold transition duration-300 opacity-0 show z-10">
-        <div id="logo" class="mx-auto my-auto md:mx-0 nav-item">
+    <nav id="nav" class="flex z-10 flex-row justify-between mx-8 w-full max-w-6xl text-3xl font-bold">
+        <div id="logo" class="my-auto mx-auto transition-all md:mx-0 nav-item">
             <a href="{{@site.url}}" class="logo">
                 {{@site.title}}
             </a>
@@ -16,12 +16,12 @@
         <div class="hidden md:flex md:my-auto">
             <ul class="nav">
                 {{#foreach navigation}}
-                    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} nav-item" role="menuitem">
+                    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} nav-item transition-all" role="menuitem">
                         <a href="{{url absolute="true"}}">{{label}}</a>
                     </li>
                 {{/foreach}}
             </ul>
-            <div id="site-search" class="hidden nav-item pl-4 my-auto">
+            <div id="site-search" class="hidden pl-4 my-auto transition-all nav-item">
                 <button data-ghost-search>{{> "icons/solid-search" title="Search the site" classname="size-6"}}</button>
             </div>
         </div>

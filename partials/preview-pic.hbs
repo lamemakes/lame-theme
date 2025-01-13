@@ -1,6 +1,5 @@
 <div>
     <div>
-        <h2 class="text-xl font-semibold">{{title}}</h2>
         <picture>
           <source 
             srcset="
@@ -38,9 +37,19 @@
             {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
             src="{{img_url feature_image size="m"}}"
             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-            class="object-cover object-center h-full w-full rounded-xl"
+            class="object-cover object-center w-full h-full rounded-xl"
             {{^if @first}}loading="lazy"{{/if}}
           >
         </picture>
+      <div id="collection-icon-{{id}}" class="hidden">
+        {{> "icons/solid-square-stack-3d" classname="size-4 inline stroke-2"}}
+      </div>
     </div>
-<div>
+</div>
+<script>
+  var content = `{{content}}`;
+  var collectionIcon = document.getElementById("collection-icon-{{id}}");
+  if((/class=\"[A-Za-z -]*kg-gallery/gm.test(content)) && collectionIcon) {
+    collectionIcon.classList.toggle("hidden")
+  }
+</script>
