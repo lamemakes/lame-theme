@@ -7,23 +7,28 @@
         {{/foreach}}
     </ul>
 {{else}}
-    <nav id="nav" class="flex z-10 flex-row justify-between mx-8 w-full max-w-6xl text-3xl font-bold">
-        <div id="logo" class="my-auto mx-auto transition-all md:mx-0 nav-item">
+    <nav id="nav" class="grid z-10 grid-cols-6 justify-between mx-8 w-full max-w-6xl text-3xl font-bold md:flex md:flex-row">
+        <div class="col-span-1 md:hidden min-h-16"></div>
+        <div id="logo" class="col-span-4 my-auto mx-0 text-center transition-all md:text-left nav-item">
             <a href="{{@site.url}}" class="logo">
                 {{@site.title}}
             </a>
         </div>
-        <div class="hidden md:flex md:my-auto">
-            <ul class="nav">
-                {{#foreach navigation}}
-                    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} nav-item transition-all" role="menuitem">
-                        <a href="{{url absolute="true"}}">{{label}}</a>
-                    </li>
-                {{/foreach}}
-            </ul>
-            <div id="site-search" class="hidden pl-4 my-auto transition-all nav-item">
+        <!-- Attempt at a no-js togglable mobile menu, not really sure how it does accessibility wise though? -->
+        <input type="checkbox" id="nav-checkbox" aria-label="Toggle menu" class="absolute opacity-0 md:hidden">
+        <label for="nav-checkbox" id="nav-toggle" class="flex justify-end my-auto md:hidden">
+            <div id="open-menu">{{> "icons/solid-bars-3" classname="size-8"}}</div>
+            <div id="close-menu" class="hidden">{{> "icons/solid-x-mark" classname="size-8"}}</div>
+        </label>
+        <ul class="flex overflow-hidden col-span-6 justify-center max-h-0 md:max-h-full nav-menu">
+            {{#foreach navigation}}
+                <li class="invisible px-4 pb-2 text-2xl transition-all md:visible md:p-4 nav-item" role="menuitem">
+                    <a href="{{url absolute="true"}}">{{label}}</a>
+                </li>
+            {{/foreach}}
+            <li id="site-search" class="invisible px-4 pb-2 my-auto transition-all md:visible md:p-4 nav-item">
                 <button data-ghost-search>{{> "icons/solid-search" title="Search the site" classname="size-6"}}</button>
-            </div>
-        </div>
+            </li>
+        </ul>
     </nav>
 {{/if}}

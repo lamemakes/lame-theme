@@ -39,6 +39,10 @@ html {
     @apply max-w-6xl;
 }
 
+h2 {
+    color: var(--color-heading);
+}
+
 /* Logo */
 .logo {
     font-family: 'Rubik';
@@ -46,19 +50,6 @@ html {
 }
 
 /* Nav */
-
-.nav {
-    display: flex;
-}
-
-.nav li {
-    display: inline-block;
-    height: 100%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
-}
-
 .show {
     opacity: 1;
 }
@@ -67,14 +58,41 @@ html {
     color: var(--color-heading);
 }
 
-.nav-item :hover,
-.nav-item :active,
+.nav-item:active,
 .nav-current {
     color: var(--color-primary);
 }
 
-h2 {
-    color: var(--color-heading);
+ul.nav-menu {
+    transition: max-height 0.15s ease-out;
+}
+
+#nav-checkbox:focus-visible ~ #nav-toggle {
+    outline: auto;
+}
+
+#nav-checkbox:checked ~ ul.nav-menu {
+    max-height: 400px;
+    transition: max-height 0.15s ease-in;
+}
+
+#nav-checkbox:checked ~ ul.nav-menu li {
+    visibility: visible;
+}
+
+#nav-checkbox:checked ~ #nav-toggle #close-menu {
+	display: block;
+}
+
+#nav-checkbox:checked ~ #nav-toggle #open-menu {
+	display: none;
+}
+
+@media (min-width: 1024px) {    /* tailwind's `lg:` */
+    .nav-item:hover {
+        transform: scale(1.1);
+        color: var(--color-primary);
+    }
 }
 
 /* Footer */
@@ -121,4 +139,20 @@ footer a {
 
 .tag-rant {
     background-color: #c66f92;
+}
+
+/* Social Media Icons */
+
+.social-icon {
+    /* tailwind's transition-all */
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+@media (min-width: 1024px) {    /* tailwind's `lg:` */
+    .social-icon:hover {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
 }
