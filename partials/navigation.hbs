@@ -22,7 +22,7 @@
         </label>
         <ul class="flex overflow-hidden col-span-6 justify-center max-h-0 md:max-h-full nav-menu">
             {{#foreach navigation}}
-                <li class="invisible px-4 pb-2 text-2xl transition-all md:visible md:p-4 nav-item" role="menuitem">
+                <li class="invisible px-4 pb-2 text-2xl transition-all md:visible md:p-4 nav-item{{#if current}} nav-current{{/if}}" role="menuitem">
                     <a href="{{url absolute="true"}}">{{label}}</a>
                 </li>
             {{/foreach}}

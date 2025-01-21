@@ -1,7 +1,71 @@
 {{!< default}}
 
-<div class="my-4 max-w-6xl columns-3">
-    {{#foreach posts}}
-                {{> "preview-pic" }}
-    {{/foreach}}
+<div id="pic-container" class="my-4 max-w-6xl sm:columns-1 md:columns-2 lg:columns-3 row-gap [&_img]:mb-4 [&_img]:rounded-xl [&_img]:w-full">
+    <noscript>
+        {{#foreach posts}}
+                    {{> "preview-pic" }}
+        {{/foreach}}
+    </noscript>
 </div>
+<script>
+    {{!-- 
+    
+        An abomination has been committed here...
+
+        Because of limitations with how Ghost handles the gallery view and me wanting
+        to show the all the pictures in a gallery in this view, I had to individually
+        extract all pics from each post containing a gallery. My solution was a nasty
+        hodgepodge of handlebars & JS but it works?
+
+        If you're reading this can can think of a better method, please let me know!
+        
+    --}}
+
+    function parseGalleryPost(content){
+        const GALLERY_IMAGE_QUERY_SELECTOR = ".kg-gallery-image > img";
+        // `preview-pic` partial creates an initial anchor, we'll create more for each image in the gallery
+        const parser = new DOMParser();
+        // Parse the content of the post to pull the images out
+        const contentHtml = parser.parseFromString(content, 'text/html');
+        console.log(contentHtml.querySelectorAll(GALLERY_IMAGE_QUERY_SELECTOR))
+        return Array.from(contentHtml.querySelectorAll(GALLERY_IMAGE_QUERY_SELECTOR));
+    }
+
+    function populatePicsView(imageArray, parentContainerId, postUrl, newTab) {
+        const parentContainer = document.getElementById(parentContainerId);
+
+        imageArray.forEach(function(image) {
+            const newNode = document.createElement("a");
+            newNode.appendChild(image);
+            newNode.href = postUrl;
+            if (newTab) newNode.target = "_blank"
+            parentContainer.appendChild(newNode);
+        })
+    }
+
+    posts_content = []
+    {{#foreach posts}}
+        {{#has tag="pics"}}
+            {{!-- If post has the `pics` tag, it'll contain a gallery --}}
+            posts_content.push([true, `{{content}}`, `{{url}}`])
+        {{else}}
+            {{!-- If it doesn't have the `pics` tag, it's just a single picture in which we can make the content the URL to the pic --}}
+            posts_content.push([false, `{{img_url feature_image size="m" format="webp"}}`, `{{img_url feature_image size="xl" format="webp"}}`])    
+        {{/has}}
+    {{/foreach}}
+    
+    posts_content.forEach(function([gallery, post_content, url]){
+        let images;
+        let newTab = false;
+        if(gallery){
+            images = parseGalleryPost(post_content);
+        } else {
+            imageElem = document.createElement("img");
+            imageElem.src = post_content;
+            images = [imageElem];
+            newTab = true;
+        }
+
+        populatePicsView(images, "pic-container", url, newTab);
+    })
+</script>

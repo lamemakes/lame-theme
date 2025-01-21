@@ -51,7 +51,7 @@ Re-usable card for linking to posts
         <div class="flex justify-between">
           <h2 class="w-full text-3xl font-semibold sm:w-auto">{{title}}</h2>
           {{!-- Ugly way to select all but pics but seems to be the only way? --}}
-          {{#has tag="art, ongoing, completed, hardware, software, researching, scrapped, rant"}}
+          {{#has tag="art, pics, ongoing, completed, hardware, software, researching, scrapped, rant"}}
             <div class="hidden sm:flex text-nowrap" title="~{{reading_time minute="1 minute" minutes="% minute"}} read time">
               {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
             </div>
