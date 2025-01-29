@@ -10,6 +10,7 @@
     <nav id="nav" class="grid z-10 grid-cols-6 justify-between mx-8 w-full max-w-6xl text-3xl font-bold md:flex md:flex-row">
         <div class="col-span-1 md:hidden min-h-16"></div>
         <div id="logo" class="col-span-4 my-auto mx-0 text-center transition-all md:text-left nav-item">
+            {{log url}}
             <a href="{{@site.url}}" class="logo">
                 {{@site.title}}
             </a>
@@ -22,7 +23,7 @@
         </label>
         <ul class="flex overflow-hidden col-span-6 justify-center max-h-0 md:max-h-full nav-menu">
             {{#foreach navigation}}
-                <li class="invisible px-4 pb-2 text-2xl transition-all md:visible md:p-4 nav-item{{#if current}} nav-current{{/if}}" role="menuitem">
+                <li id="{{slug}}" class="invisible px-4 pb-2 text-2xl transition-all md:visible md:p-4 nav-item{{#if current}} nav-current{{/if}}" role="menuitem">
                     <a href="{{url absolute="true"}}">{{label}}</a>
                 </li>
             {{/foreach}}
@@ -31,4 +32,21 @@
             </li>
         </ul>
     </nav>
+    <script>
+        {{!-- 
+            All others paths outside of those defined in
+            the array below are the only slugs that wouldn't
+            be a blog post or blog view.
+
+            Not ideal but ¯\_(ツ)_/¯
+        --}}
+        const notBlog = ["/", "/pics/", "/about/"]
+        const blogNav = document.getElementById("blog")
+        const current = "nav-current"
+        if(!notBlog.includes(location.pathname) && blogNav){
+            blogNav.classList.add(current)
+        } else {
+            blogNav.classList.remove(current)
+        }
+    </script>
 {{/if}}

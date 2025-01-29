@@ -2,23 +2,23 @@
 
 {{#post}}
 
-<article class="my-4 max-w-6xl rounded-xl px-6 py-4 lg:px-16 lg:py-6 bg-zinc-900/70 {{post_class}}">
+<article class="rounded-xl px-6 py-4 lg:px-16 lg:py-6 bg-zinc-900/70 {{post_class}}">
 
-    <header>
-        <h1 class="mb-2 text-4xl md:text-5xl font-extrabold text-center">{{title}}</h1>
-        <p class="w-full text-center">
+    <header class="flex flex-col items-center">
+        <h1 class="mb-2 text-4xl md:text-5xl font-extrabold">{{title}}</h1>
+        <p class="font-bold">
             <span>
                 {{> "icons/solid-calendar" classname="size-5 inline mb-1"}}
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                <span class="bull">&bull;</span> 
+                <span class="bull px-1">&bull;</span> 
                 {{reading_time}}
             </span>
         </p>
     </header>
 
-    <div class="my-4 mx-auto w-4/5 rounded-full divide-solid border-y-2 border-font-color"></div>
+    <div class="my-4 mx-auto w-4/5 rounded-full divide-dashed border-t-[1px] border-b-2 border-primary-color"></div>
 
-    <div id="post-content" class="mx-auto prose prose-li:my-0 prose-figcaption:text-center md:prose-li:my-2 prose-headings:text-center prose-headings:text-heading-color prose-li:text-font-color">
+    <div id="post-content" class="mx-auto prose prose-li:my-0 prose-figcaption:text-center md:prose-li:my-[0.1rem] prose-headings:my-3 prose-headings:text-heading-color prose-li:text-font-color prose-a:text-primary-color prose-a:no-underline prose-a:font-bold prose-p:leading-[1.5rem] prose-ul:mt-[-1rem]">
         {{content}}
     </div>
 
