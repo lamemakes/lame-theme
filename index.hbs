@@ -5,15 +5,13 @@
             {{> "preview-blog" }}
         {{/foreach}}
     </div>
-    <div class="my-1 mx-auto w-4/5 rounded-full divide-solid lg:hidden border-y-2 border-zinc-900/70"></div>
-    <div class="mx-auto mt-4 w-full lg:sticky lg:top-[5.25rem] lg:mt-0 h-fit">
+    <div class="lg:hidden">
+        {{> "divider"}}
+    </div>
+    <div class="mx-auto mt-4 w-full lg:sticky lg:mt-0 h-fit lg:top-[5.25rem]">
         {{> "about" }}
-        <div class="flex justify-between px-8 pt-5 mx-auto lg:px-4 max-w-96">
-            <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" title="Go to the lamemakes GitHub" classname="size-8 inline"}}</a>
-            <a href="https://freak.social/@lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/mastodon" title="Follow on Mastodon" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" title="Send an e-mail" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" title="Follow on Instagram" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="/rss" target="_blank" class="social-icon">{{> "icons/solid-rss" title="Subscribe to the RSS feed" classname="size-8 inline hover:opacity-80"}}</a>
+        <div class="flex justify-between px-8 pt-3 mx-auto lg:px-4 max-w-96">
+            {{> "socials"}}
         </div>
     </div>
     {{!-- If JS isn't enabled, fallback to standard pagination --}}

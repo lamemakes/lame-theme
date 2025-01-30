@@ -3,14 +3,15 @@
     <article class="rounded-xl px-6 py-4 lg:px-16 lg:py-6 bg-zinc-900/70 {{post_class}}">
 
         <header>
-            <h1 class="mb-2 text-4xl md:text-5xl font-extrabold text-center">{{title}}</h1>
+            <h1 class="mb-2 text-4xl font-extrabold text-center md:text-5xl">{{title}}</h1>
         </header>
 
-        <div class="my-4 mx-auto w-4/5 rounded-full divide-solid border-y-2 border-font-color"></div>
+        {{> "divider"}}
 
-        <div id="post-content" class="mx-auto prose prose-li:my-0 prose-figcaption:text-center md:prose-li:my-2 prose-headings:my-3 prose-headings:text-heading-color prose-li:text-font-color prose-a:text-primary-color prose-a:no-underline prose-a:font-bold">
-            {{content}}
-        </div>
+        {{> "post-content" content=content}}
 
     </article>
+    <div class="flex justify-between px-8 pt-3 mx-auto lg:px-4 max-w-96">
+        {{> "socials"}}
+    </div>
 {{/page}}
