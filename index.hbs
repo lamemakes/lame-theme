@@ -11,7 +11,11 @@
     <div class="mx-auto mt-4 w-full lg:sticky lg:mt-0 h-fit lg:top-[5.25rem]">
         {{> "about" }}
         <div class="flex justify-between px-8 pt-3 mx-auto lg:px-4 max-w-96">
-            {{> "socials"}}
+            <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" svg_title="The lamemakes GitHub" classname="size-8 inline"}}</a>
+            <a href="https://freak.social/@lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/mastodon" svg_title="Follow on Mastodon" classname="size-8 inline hover:opacity-80"}}</a>
+            <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" svg_title="Send me an e-mail" classname="size-8 inline hover:opacity-80"}}</a>
+            <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" svg_title="Follow on Instagram" classname="size-8 inline hover:opacity-80"}}</a>
+            <a href="/rss" target="_blank" class="social-icon">{{> "icons/solid-rss" svg_title="Subscribe to the RSS feed" classname="size-8 inline hover:opacity-80"}}</a>
         </div>
     </div>
     {{!-- If JS isn't enabled, fallback to standard pagination --}}
