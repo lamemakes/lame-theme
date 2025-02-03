@@ -1,32 +1,32 @@
 {{!< default}}
 {{#page}}
-    <article class="rounded-xl px-6 py-4 lg:px-16 lg:py-6 bg-zinc-900/70 {{post_class}}">
+    <article class="{{post_class}}">
 
         <header>
             <h1 class="mb-2 text-4xl font-extrabold text-center md:text-5xl">{{title}}</h1>
         </header>
 
-        {{> "divider"}}
+        <div class="my-4 mx-auto w-4/5 rounded-full border-b-2 divide-dashed border-t-[1px]"></div>
 
         {{> "post-content" content=content}}
 
-        <div class="prose prose-headings:my-3 prose-headings:text-heading-color prose-li:text-font-color prose-li:list-none prose-ul:ps-0 prose-a:text-primary-color prose-a:no-underline prose-a:font-bold prose-p:leading-[1.5rem]">
+        <div class="prose prose-headings:my-4 prose-headings:text-heading-color prose-li:text-font-color prose-li:list-none prose-ul:ps-0 prose-a:text-primary-color prose-a:no-underline prose-a:font-bold prose-p:leading-[1.5rem]">
             <h2 id="contact" class="my-3 text-2xl text-heading-color">Contact</h2>
-            <ul class="flex flex-row justify-between">
+            <ul class="columns-2 md:flex md:flex-row justify-between">
                 <li>
-                    <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" svg_title="The lamemakes GitHub" classname="size-5 inline text-font-color mr-1"}} GitHub</a>
+                    <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" svg_title="The lamemakes GitHub" classname="size-5 inline text-font-color mr-1 mb-1"}} GitHub</a>
                 </li>
                 <li>
-                    <a href="https://freak.social/@lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/mastodon" svg_title="Follow on Mastodon" classname="size-5 inline text-font-color mr-1"}} Mastodon</a>
+                    <a href="https://freak.social/@lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/mastodon" svg_title="Follow on Mastodon" classname="size-5 inline text-font-color mr-1 mb-1"}} Mastodon</a>
                 </li>
                 <li>
-                    <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" svg_title="Follow on Instagram" classname="size-5 inline text-font-color mr-1"}} Instagram</a>
+                    <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" svg_title="Follow on Instagram" classname="size-5 inline text-font-color mr-1 mb-1"}} Instagram</a>
                 </li>
                 <li>
-                    <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" svg_title="Send me an e-mail" classname="size-5 inline text-font-color mr-1"}} E-Mail</a>                        
+                    <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" svg_title="Send me an e-mail" classname="size-5 inline text-font-color mr-1 mb-1"}} Email</a>                        
                 </li>
                 <li>
-                    <a href="https://signal.me/#eu/TFmYCHOS5i_MAXmBcbrIow6joaCMTzQPxECktKnEV2CCPlS4VqFChp69Re2M3Bg_" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/signal" svg_title="Message on Signal" classname="size-5 inline text-font-color mr-1"}} Signal</a>
+                    <a href="https://signal.me/#eu/TFmYCHOS5i_MAXmBcbrIow6joaCMTzQPxECktKnEV2CCPlS4VqFChp69Re2M3Bg_" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/signal" svg_title="Message on Signal" classname="size-5 inline text-font-color mr-1 mb-1"}} Signal</a>
                 </li>
             </ul>
         </div>

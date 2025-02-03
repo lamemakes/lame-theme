@@ -2,7 +2,7 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="self-center p-4 mb-4 w-full rounded-xl lg:p-6 lg:max-w-full min-w-80 bg-zinc-900/70 lg:last:mb-0">
+<article class="self-center py-4 mb-4 w-full group lg:max-w-full min-w-80 first:pt-0 lg:last:mb-0">
     <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left" href="{{url}}">
       <div class="mx-auto w-40 h-40 sm:mr-6 shrink-0">
         <picture>
@@ -49,15 +49,19 @@ Re-usable card for linking to posts
       </div>
       <div class="w-full">
         <div class="flex justify-between">
-          <h2 class="w-full text-3xl font-semibold sm:w-auto">{{title}}</h2>
-          {{!-- Ugly way to select all but pics but seems to be the only way? --}}
-          {{#has tag="art, pics, ongoing, completed, hardware, software, researching, scrapped, rant"}}
-            <div class="hidden sm:flex text-nowrap" svg_title="~{{reading_time minute="1 minute" minutes="% minute"}} read time">
-              {{> "icons/outline-clock" classname="size-6 inline pr-1"}}{{reading_time minute="1 min" minutes="% min"}}
-            </div>
-          {{/has}}
+          <h2 class="w-full text-3xl font-semibold sm:w-auto group-hover:underline">{{title}}</h2>
         </div>
-        <span class="text-sm"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></span>
+        <span class="text-sm">
+          {{> "icons/micro-calendar-days" classname="size-4 inline mb-1"}}
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
+          <!--
+          <span class="px-1 bull">&bull;</span> 
+          {{!-- Ugly way to select all besides pics but seems to be the only way? --}}
+          {{#has tag="art, pics, ongoing, completed, hardware, software, researching, scrapped, rant"}}
+              {{> "icons/micro-clock" classname="size-4 inline mb-1"}} {{reading_time minute="1 min" minutes="% min"}}
+          {{/has}}
+          -->
+        </span>
         <p class="text-heading-color">{{excerpt}}</p>
         <div class="mt-2 text-sm font-semibold">
           {{#if tags}}

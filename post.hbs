@@ -2,21 +2,21 @@
 
 {{#post}}
 
-<article class="rounded-xl px-6 py-4 lg:px-16 lg:py-6 bg-zinc-900/70 {{post_class}}">
+<article class="{{post_class}}">
 
     <header class="flex flex-col items-center">
         <h1 class="mb-2 text-4xl font-extrabold md:text-5xl">{{title}}</h1>
         <p class="font-bold">
             <span>
                 {{> "icons/solid-calendar" classname="size-5 inline mb-1"}}
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
                 <span class="px-1 bull">&bull;</span> 
                 {{reading_time}}
             </span>
         </p>
     </header>
 
-    {{> "divider"}}
+    <div class="my-4 mx-auto w-4/5 rounded-full border-b-2 border-t-[1px]"></div>
 
     {{> "post-content" content=content}}
 
