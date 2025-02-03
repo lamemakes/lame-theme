@@ -8,3 +8,7 @@
 // Import JS
 // import menuOpen from './menuOpen'
 // import infiniteScroll from './infiniteScroll'
+import * as basicLightbox from 'basiclightbox';
+
+window.basicLightbox = basicLightbox;
+console.log("yeet")
