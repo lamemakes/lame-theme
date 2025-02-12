@@ -21,6 +21,26 @@ production stylesheet in assets/built/screen.css using: npm run dev
     src: url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bagel Fat One';
+    src: url('../fonts/BagelFatOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url('../fonts/Shrikhand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Concert One';
+    src: url('../fonts/ConcertOne-Regular.ttf') format('truetype');
+}
+
 html {
     display: flex;
     flex-direction: column;
@@ -42,6 +62,7 @@ h2 {
 .logo {
     font-family: 'Rubik';
     font-weight: 500;
+    /* font-family: 'Bagel Fat One'; */
 }
 
 /* Nav */
@@ -51,6 +72,11 @@ h2 {
 
 .nav-item {
     color: var(--color-heading);
+    display: flex
+}
+
+.nav-item > a {
+    align-self: center;
 }
 
 .nav-item:active,
@@ -99,39 +125,39 @@ footer a {
 
 /* Tags */
 
-button.tag {
+span.tag {
     background-color: #66c9ff;
     color: var(--color-font-dark);
     border-radius: 9999px;
 }
-button.tag-completed {
+span.tag-completed {
     background-color: #6feb96;
 }
 
-button.tag-ongoing {
+span.tag-ongoing {
     background-color: #ffb566;
 }
 
-button.tag-researching {
+span.tag-researching {
     background-color: #857cff;
 }
 
-button.tag-scrapped {
+span.tag-scrapped {
     background-color: #ff4d4d;
 }
-button.tag-hardware {
+span.tag-hardware {
     background-color: #7188fd;
 }
 
-button.tag-software {
+span.tag-software {
     background-color: #d466ff;
 }
 
-button.tag-art {
+span.tag-art {
     background-color: #ff668c;
 }
 
-button.tag-rant {
+span.tag-rant {
     background-color: #c66f92;
 }
 

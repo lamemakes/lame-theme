@@ -8,9 +8,10 @@
         <h1 class="mb-2 text-4xl font-extrabold md:text-5xl">{{title}}</h1>
         <p class="font-bold">
             <span>
-                {{> "icons/solid-calendar" classname="size-5 inline mb-1"}}
+                {{> "icons/solid-calendar-days" classname="size-5 inline mb-1"}}
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
-                <span class="px-1 bull">&bull;</span> 
+                <span class="px-1 bull">&bull;</span>
+                {{> "icons/solid-clock" classname="size-5 inline mb-1"}}
                 {{reading_time}}
             </span>
         </p>
@@ -40,10 +41,17 @@
     const galleryImages = Array.from(document.getElementsByClassName("kg-gallery-image"));
     galleryImages.forEach((imageWrapper) => {
         const image = Array.from(imageWrapper.children)[0];
-        const anchor = document.createElement("a");
-        anchor.href = image.src;
-        anchor.target = "_blank";
-        image.replaceWith(anchor);
-        anchor.appendChild(image);
+        const picPreview = document.createElement("button");
+
+        picPreview.onclick = () => {
+            let lightbox = basicLightbox.create(image.outerHTML);
+            lightbox.show();
+            document.body.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") lightbox.close()
+            })
+        }
+
+        image.replaceWith(picPreview);
+        picPreview.appendChild(image);
     })
 </script>

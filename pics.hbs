@@ -7,7 +7,8 @@
         {{/foreach}}
     </noscript>
 </div>
-<script>
+{{> "lightbox" }}
+<script type="module">
     {{!-- 
     
         An abomination has been committed here...
@@ -27,23 +28,34 @@
         const parser = new DOMParser();
         // Parse the content of the post to pull the images out
         const contentHtml = parser.parseFromString(content, 'text/html');
-        console.log(contentHtml.querySelectorAll(GALLERY_IMAGE_QUERY_SELECTOR))
         return Array.from(contentHtml.querySelectorAll(GALLERY_IMAGE_QUERY_SELECTOR));
     }
 
     function populatePicsView(imageArray, parentContainerId, postUrl, newTab) {
         const parentContainer = document.getElementById(parentContainerId);
+        const lightboxWrapper = document.getElementById("lightbox-template");
 
         imageArray.forEach(function(image) {
-            const newNode = document.createElement("a");
-            newNode.appendChild(image);
-            newNode.href = postUrl;
-            if (newTab) newNode.target = "_blank"
-            parentContainer.appendChild(newNode);
+            const picPreview = document.createElement("button");
+            //picPreview.role = "button";
+            image.loading = "lazy";
+            picPreview.appendChild(image);
+
+            console.log(lightboxWrapper)
+
+            picPreview.onclick = () => {
+                let lightbox = basicLightbox.create(image.outerHTML);
+                lightbox.show();
+                document.body.addEventListener('keydown', (e) => {
+                    if (e.key === "Escape") lightbox.close()
+                })
+            }
+
+            parentContainer.appendChild(picPreview);
         })
     }
 
-    posts_content = []
+    const posts_content = []
     {{#foreach posts}}
         {{#has tag="pics"}}
             {{!-- If post has the `pics` tag, it'll contain a gallery --}}
@@ -60,7 +72,7 @@
         if(gallery){
             images = parseGalleryPost(post_content);
         } else {
-            imageElem = document.createElement("img");
+            const imageElem = document.createElement("img");
             imageElem.src = post_content;
             images = [imageElem];
             newTab = true;

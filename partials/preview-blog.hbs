@@ -2,7 +2,7 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="self-center py-4 mb-4 w-full group lg:max-w-full min-w-80 first:pt-0 lg:last:mb-0">
+<article class="self-center py-2 mb-2 w-full lg:max-w-full first:pt-0 group min-w-80 lg:last:mb-0">
     <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left" href="{{url}}">
       <div class="mx-auto w-40 h-40 sm:mr-6 shrink-0">
         <picture>
@@ -66,7 +66,7 @@ Re-usable card for linking to posts
         <div class="mt-2 text-sm font-semibold">
           {{#if tags}}
             {{#foreach tags}}
-              <button class="px-2.5 py-0.5 mx-0.5 tag tag-{{slug}}">{{name}}</button>
+              <span class="px-2.5 py-0.5 mx-0.5 tag tag-{{slug}}">{{name}}</span>
             {{/foreach}}
           {{/if}}
         </div>
