@@ -2,8 +2,8 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="self-center py-2 mb-2 w-full lg:max-w-full first:pt-0 group min-w-80 lg:last:mb-0">
-    <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left" href="{{url}}">
+<article class="self-center py-2 mb-2 w-full lg:max-w-full first:pt-0 min-w-80 lg:last:mb-0">
+    <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left group" href="{{url}}">
       <div class="mx-auto w-40 h-40 sm:mr-6 shrink-0">
         <picture>
           <source 
@@ -42,14 +42,14 @@ Re-usable card for linking to posts
             {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}}
             src="{{img_url feature_image size="m"}}"
             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
-            class="object-cover object-center w-full h-full rounded-xl"
+            class="object-cover object-center w-full h-full rounded-xl group-hover:grayscale group-focus-visible:grayscale"
             {{^if @first}}loading="lazy"{{/if}}
           >
         </picture>
       </div>
       <div class="w-full">
         <div class="flex justify-between">
-          <h2 class="w-full text-3xl font-semibold sm:w-auto group-hover:underline">{{title}}</h2>
+          <h2 class="w-full text-3xl font-semibold sm:w-auto group-hover:underline group-focus-visible:underline">{{title}}</h2>
         </div>
         <span class="text-sm">
           {{> "icons/micro-calendar-days" classname="size-4 inline mb-1"}}

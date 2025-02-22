@@ -1,0 +1,9 @@
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+.social-icon > svg {
+    height: 2rem;
+    width: 2rem;
+    display: inline;
+}

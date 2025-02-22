@@ -1,12 +1,12 @@
 {{!< default}}
 {{#page}}
-    <article class="{{post_class}}">
+    <article class="{{post_class}} max-w-2xl w-full self-center">
 
         <header>
             <h1 class="mb-2 text-4xl font-extrabold text-center md:text-5xl">{{title}}</h1>
         </header>
 
-        <div class="my-4 mx-auto w-4/5 rounded-full border-b-2 divide-dashed border-t-[1px]"></div>
+        <div class="my-4 mx-auto w-4/5 divider--bold"></div>
 
         {{> "post-content" content=content}}
 

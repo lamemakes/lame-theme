@@ -1,0 +1,19 @@
+.divider--bold {
+    border-radius: 9999px;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border-bottom-width: 2px;
+    border-top-width: 1px;
+}
+
+.divider--subtle {
+    border-radius: 9999px;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+    border-color: var(--color-secondary);
+    border-bottom-width: 1px;
+}

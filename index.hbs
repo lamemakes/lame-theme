@@ -3,18 +3,18 @@
     <div class="flex flex-col justify-center lg:col-span-3 lg:pr-4 lg:border-r lg:border-secondary-color">
         {{#foreach posts}}
             {{> "preview-blog" }}
-            <div class="my-4 mx-auto w-4/5 rounded-full border-b lg:hidden last:hidden border-secondary-color"></div>
+            <div class="mx-auto lg:hidden last:hidden divider--subtle"></div>
         {{/foreach}}
     </div>
-    <div class="my-4 mx-auto w-4/5 rounded-full border-b-2 md:hidden"></div>
+    <div class="mx-auto md:hidden divider--bold"></div>
     <div class="mx-auto mt-4 w-full lg:sticky lg:mt-0 h-fit lg:top-[6.2rem]">
         {{> "about" }}
-        <div class="flex justify-between px-8 pt-3 mx-auto lg:px-4 max-w-96">
-            <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" svg_title="The lamemakes GitHub" classname="size-8 inline"}}</a>
-            <a href="https://freak.social/@lamemakes" rel="me" target="_blank" class="social-icon">{{> "icons/socials/mastodon" svg_title="Follow on Mastodon" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" svg_title="Send me an email" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" svg_title="Follow on Instagram" classname="size-8 inline hover:opacity-80"}}</a>
-            <a href="/rss" target="_blank" class="social-icon">{{> "icons/solid-rss" svg_title="Subscribe to the RSS feed" classname="size-8 inline hover:opacity-80"}}</a>
+        <div class="flex justify-between px-8 pt-3 mx-auto lg:px-0 max-w-96">
+            <a href="https://github.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/github" svg_title="The lamemakes GitHub"}}</a>
+            <a href="https://freak.social/@lamemakes" rel="me" target="_blank" class="social-icon">{{> "icons/socials/mastodon" svg_title="Follow on Mastodon"}}</a>
+            <a href="mailto:wes@lamemakes.com" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/solid-envelope" svg_title="Send me an email"}}</a>
+            <a href="https://instagram.com/lamemakes" rel="noreferrer noopener" target="_blank" class="social-icon">{{> "icons/socials/instagram" svg_title="Follow on Instagram"}}</a>
+            <a href="/rss" target="_blank" class="social-icon">{{> "icons/solid-rss" svg_title="Subscribe to the RSS feed"}}</a>
         </div>
     </div>
     {{!-- If JS isn't enabled, fallback to standard pagination --}}

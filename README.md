@@ -13,7 +13,6 @@ This theme is based off of the [Ghost Starter Theme](https://github.com/TryGhost
   - [ ] Handle pagination
 - [ ] Add linting
   - [X] Uses [rustywind](https://github.com/avencera/rustywind) to sort tailwind classes
-  - [ ] Other linters? most don't seem to play well with handlebars
 - [ ] Post formatting
 - [ ] Add new logo
 - [ ] Pics page
