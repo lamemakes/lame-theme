@@ -2,9 +2,9 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="self-center py-2 mb-2 w-full lg:max-w-full first:pt-0 min-w-80 lg:last:mb-0">
-    <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left group" href="{{url}}">
-      <div class="mx-auto w-40 h-40 sm:mr-6 shrink-0">
+<article class="self-center py-2 w-full md:mb-2 lg:max-w-full first:pt-0 min-w-80 lg:last:mb-0">
+    <a class="flex flex-col justify-center text-center sm:flex-row sm:text-left text-balance group" href="{{url}}">
+      <div class="mx-auto mb-2 w-40 h-40 sm:mr-6 shrink-0">
         <picture>
           <source 
             srcset="
@@ -47,23 +47,18 @@ Re-usable card for linking to posts
           >
         </picture>
       </div>
-      <div class="w-full">
+      <div class="space-y-2 w-full">
         <div class="flex justify-between">
-          <h2 class="w-full text-3xl font-semibold sm:w-auto group-hover:underline group-focus-visible:underline">{{title}}</h2>
+          <h2 class="w-full text-2xl font-semibold sm:w-auto md:text-3xl group-hover:underline group-focus-visible:underline">{{title}}</h2>
         </div>
         <span class="text-sm">
-          {{> "icons/micro-calendar-days" classname="size-4 inline mb-1"}}
+          {{> "icons/micro-calendar-days" classname="size-4 inline"}}
           <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
-          <!--
-          <span class="px-1 bull">&bull;</span> 
-          {{!-- Ugly way to select all besides pics but seems to be the only way? --}}
-          {{#has tag="art, pics, ongoing, completed, hardware, software, researching, scrapped, rant"}}
-              {{> "icons/micro-clock" classname="size-4 inline mb-1"}} {{reading_time minute="1 min" minutes="% min"}}
-          {{/has}}
-          -->
         </span>
-        <p class="text-heading-color">{{excerpt}}</p>
-        <div class="mt-2 text-sm font-semibold">
+        {{#if excerpt}}
+          <p class="text-heading-color">{{excerpt}}</p>
+        {{/if}}
+        <div class="text-sm font-semibold">
           {{#if tags}}
             {{#foreach tags}}
               <span class="px-2.5 py-0.5 mx-0.5 tag tag-{{slug}}">{{name}}</span>
