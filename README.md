@@ -24,6 +24,7 @@ This theme used [Ghost Starter Theme](https://github.com/TryGhost/Starter) as an
 - [X] Add link to RSS
 - [X] Build about page
 - [X] Reduce load time from large background images
+- [X] Handle featured posts
 - [ ] Pagination/infinite scroll
 - [ ] Optimize pics page to load faster
 - [ ] Blog detail view improvements
