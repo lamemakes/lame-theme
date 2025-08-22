@@ -1,8 +1,6 @@
 # [lamemakes.com](https://lamemakes.com) Ghost Theme 👻
 
-🏗️ **This theme is a WIP and will likely be ugly in both code & UI until finished** 🏗️
-
-This theme is based off of the [Ghost Starter Theme](https://github.com/TryGhost/Starter), utilizing icons from [Heroicons](https://heroicons.com)
+This theme used [Ghost Starter Theme](https://github.com/TryGhost/Starter) as an initial template, and utilized icons from [Heroicons](https://heroicons.com)
 
 ## TODO
 
@@ -11,22 +9,28 @@ This theme is based off of the [Ghost Starter Theme](https://github.com/TryGhost
   - [X] Ghost search is hidden when JS is disabled
   - [X] Only used minimally to enhance non-mission critical pieces of the site (ie. pics view)
   - [ ] Handle pagination
-- [ ] Add linting
+- [X] Add linting
   - [X] Uses [rustywind](https://github.com/avencera/rustywind) to sort tailwind classes
-- [ ] Post formatting
+- [X] Post formatting
 - [ ] Add new logo
-- [ ] Pics page
+- [X] Pics page
 - [ ] Auto deploy pipeline
-- [ ] Mobile version
+- [X] Mobile version
   - [X] Mobile menu implemented
 - [ ] Accessibility improvements
   - [X] Color contrast
   - [X] Ensure tabability through site
   - [ ] More alt text/better ARIA
 - [X] Add link to RSS
-- [ ] Build about page
-- [ ] Reduce load time from large background images
+- [X] Build about page
+- [X] Reduce load time from large background images
 - [ ] Pagination/infinite scroll
+- [ ] Optimize pics page to load faster
+- [ ] Blog detail view improvements
+  - [ ] Indicate if a post is featured
+  - [ ] Display topic badges on post
+  - [ ] Show next/prev articles
+- [ ] Handling larger file/video hosting?
 
 
 ## Routing
