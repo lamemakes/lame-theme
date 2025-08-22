@@ -1,9 +1,19 @@
 {{!< default}}
 <div class="flex flex-col lg:grid lg:grid-cols-4 lg:gap-4">
-    <div class="flex flex-col justify-center lg:col-span-3 lg:pr-4 lg:border-r lg:border-secondary-color">
+    <div class="flex flex-col justify-center lg:col-span-3 lg:pr-4 lg:border-r lg:border-secondary">
+        {{! Show featured posts on top}}
         {{#foreach posts}}
-            {{> "preview-blog" }}
-            <div class="mx-auto lg:hidden last:hidden divider--subtle"></div>
+            {{#if featured}}
+                {{> "preview-blog" }}
+                <div class="mx-auto lg:hidden last:hidden divider--subtle"></div>
+            {{/if}}
+        {{/foreach}}
+        {{#foreach posts}}
+            {{! TODO: if not?? don't have internet rn }}
+            {{#unless featured}}
+                {{> "preview-blog" }}
+                <div class="mx-auto lg:hidden last:hidden divider--subtle"></div>
+            {{/unless}}
         {{/foreach}}
     </div>
     <div class="mx-auto md:hidden divider--bold"></div>

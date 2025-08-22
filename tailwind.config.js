@@ -4,12 +4,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                'primary-color': 'var(--color-primary)',
-                'secondary-color': 'var(--color-secondary)',
-                'tertiary-color': 'var(--color-tertiary)',
-                'font-color': 'var(--color-font)',
-                'heading-color': 'var(--color-heading)',
-                'secondary-color-op': 'var(--color-secondary-op)',
+                // 'rgb(from var([color var]) r g b / <alpha-value>)' allows for tailwind opacity args
+                // ie. 'bg-primary/50'
+                'primary': 'rgb(from var(--color-primary) r g b / <alpha-value>)',
+                'secondary': 'rgb(from var(--color-secondary) r g b / <alpha-value>)',
+                'tertiary': 'rgb(from var(--color-tertiary) r g b / <alpha-value>)',
+                'font': 'var(--color-font)',
+                'heading': 'rgb(from var(--color-heading) r g b / <alpha-value>)',
             },
             backgroundImage: {
                 'desktop-clutter': "url('../images/desktop_background.webp')",
