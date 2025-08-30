@@ -4,6 +4,14 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+        {{!-- Handling of favicon for different themes --}}
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset 'favicon/favicon-32x32.png'}}" media="(prefers-color-scheme: light)">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset 'favicon/favicon-96x96.png'}}" media="(prefers-color-scheme: light)">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset 'favicon/favicon-16x16.png'}}" media="(prefers-color-scheme: light)">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset 'favicon/favicon-dark-32x32.png'}}" media="(prefers-color-scheme: dark)">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset 'favicon/favicon-dark-96x96.png'}}" media="(prefers-color-scheme: dark)">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset 'favicon/favicon-dark-16x16.png'}}" media="(prefers-color-scheme: dark)">
+
         <script src="{{asset "built/index.js"}}" defer></script>
 
         <title>{{meta_title}}</title>
