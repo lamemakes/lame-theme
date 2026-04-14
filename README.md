@@ -1,6 +1,6 @@
 # [lamemakes.com](https://lamemakes.com) Ghost Theme 👻
 
-🏗️ **This theme is a WIP and will likely be ugly in both code & UI until finished** 🏗️
+**⚠️ NOTE: Development of this project will continue on it's Codeberg repo, [check it out!](https://codeberg.org/lamemakes/lame-theme) ⚠️**
 
 This theme is based off of the [Ghost Starter Theme](https://github.com/TryGhost/Starter), utilizing icons from [Heroicons](https://heroicons.com)
 
